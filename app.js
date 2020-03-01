@@ -22,7 +22,7 @@ const createWindow = () => {
 
     win.loadFile('views/student/login.html')
 
-    // win.webContents.openDevTools()
+    win.webContents.openDevTools()
 
     win.on('closed', () => {
         win = null

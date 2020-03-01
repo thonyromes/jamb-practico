@@ -43,3 +43,26 @@ const getSettings = () => {
 const setSettings = (config) => {
 	return build.setUserSettings(config)
 }
+
+const resetSettings = () => {
+	return build.resetUserSettings()
+}
+
+const login = () => {
+	document.querySelector('#form').onsubmit = (e) =>{
+		e.preventDefault()
+		let email = document.querySelector('#userEmail').value
+		let password = document.querySelector('#userPass').value
+
+		resetSettings()
+		if (email == 'admin@jambpractico.com' && password == 'practicoadmin') {
+			setSettings({
+				name: 'Practico Admin',
+				loggedIn: true
+			})
+			location.assign('./login.html')
+		}else{
+			alert('Login Failed')
+		}
+	}
+}
