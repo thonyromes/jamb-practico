@@ -1,0 +1,30 @@
+{
+  "name": "gitlaws",
+  "version": "1.0.0",
+  "description": "A detailed repository of state and federal laws",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [
+    "legal",
+    "tech",
+    "law"
+  ],
+  "author": "Claret Nnamocha <devclareo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "alpha-orm": "^1.2.13",
+    "electron": "^7.1.9",
+    "electron-builder": "^21.2.0",
+    "electron-settings": "^3.2.0",
+    "license-key-gen": "^0.1.2",
+    "nodejs-license-key": "^1.0.1",
+    "open": "^7.0.2",
+    "usb": "^1.6.2"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^1.8.8"
+  }
+}
