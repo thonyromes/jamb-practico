@@ -3,6 +3,7 @@
 
 <head>
     <script src="../static/js/electron.setup.js"></script>
+    <script> examInit() </script>
     <meta http-equiv="Content-Type" content="text/hdl;charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,137 +21,56 @@
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal fade" id="modal-fixed" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header py-2 bg-light">
+                    <h5 class="modal-title">End Exam?</h5>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to end the exam? be sure to properly
+                    cross-check all questions to avoid stories that touches the heart!
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">
+                        Good point
+                    </button>
+                    <button type="button" class="btn btn-danger" id="end-btn">
+                        Yep! Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
     <div class="wrapper wrapper-bg bg-fullscreen d-flex justify-centent-center align-items-center">
-        <div class="container-fluid py-5 py-md-3">
-            <div class="row pt-5 pt-md-3">
-                <div class="col-12 mx-auto pt-5 py-md-3">
-                    <div class="d-box rounded">
+        <div class="container-fluid py-5 py-md-3 py-lg-1">
+            <div class="row pt-5 pt-md-3 py-lg-1">
+                <div class="col-12 mx-auto pt-5 py-md-3 py-lg-1">
+                    <div class="d-box rounded py-1">
                         <div class="d-box-header">
-                            <div class="d-flex flex-wrap flex-md-nowrap align-items-center justify-content-center justify-content-md-between border-bottom pb-2">
+                            <div id="timer" class="text-capitalize text-center bg-success text-white">
+                                <span class="f-w--6 f-s--2" id="timer-display">00:00:00</span>
+                                <script src="../static/js/timer.js"></script>
+                                <div class="line-bottom line-thick col-1 mx-auto"></div>
+                            </div>
+                        </div>
+                        <ul class="nav nav-tabs row justify-content-start align-items-center" id="subsTab" role="tablist">
+                            <!-- Subject TabLinks Goes here -->
+                        </ul>
+                        <div class="d-box-body">
+                            <div class="tab-content" id="lawsTabContent">
+                                <!-- Subject Tabs Goes here -->
+                            </div>
+                            <script src="../static/js/generate.page.js"></script>
+                            <div class="mt-2">
                                 <button data-toggle="modal" data-target="#modal-fixed" class="btn btn-sm btn-danger d-flex align-items-center show-modal">
                                     <i class="icon ion-ios-close-outline icon-w icon-x"></i>
                                     <span class="f-w--6">End Exam</span>
                                 </button>
-                                <h4 class="text-center m-0 mt-3 mb-1 my-md-0 d-black-50 col-12 col-md-auto f-s--2">
-                                    Mathematics (100 Questions)
-                                </h4>
-                                <div id="timer" class="text-capitalize text-center">
-                                    <span class="f-w--6 f-s--4" id="timer-display">59:00</span>
-                                    <script src="../static/js/timer.js"></script>
-                                    <span class="f-w--4">min(s) remaining</span>
-                                    <div class="line-bottom line-thick col-1 mx-auto"></div>
-                                </div>
                             </div>
                         </div>
-                        <div class="d-box-body">
-                            <div class="tab-content" id="qs_tab_content">
-                                <!-- Questions Go Here -->
-                            </div>
-                            <div class="question-num-area">
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination nav nav-tabs justify-content-center" id="qs_tabs" role="tablist">
-                                        <!-- Navs Go Here -->
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <script>
-                            let questions = ''
-                            let tabs = ''
-                            for (let i = 1; i <= 50; i++) {
-                                questions += `
-                                    <div class="tab-pane fade ${i == 1 ? 'show active' : '' }" id="q-${i}" role="tabpanel" aria-labelledby="q${i}-tab">
-                                        <div class="question-area mb-4">
-                                            <div class="question__theory mb-3 d-flex justify-content-start align-items-center flex-wrap">
-                                                <div class="text-nowrap">
-                                                    <span class="f-w--6 f-s--3">Q</span>
-                                                    <span class="f-w--5 f-xs--6">${i}.</span>
-                                                </div>
-                                                <div class="pl-2">
-                                                    What happens when an unstopable force meets an
-                                                    immovable object?
-                                                </div>
-                                            </div>
-                                            <div class="question__image col-11 col-sm-6 col-md-5 col-lg-3 pl-3 pl-sm-5">
-                                                <img src="../static/img/books-1.jpeg" alt="question-image" class="img-fluid rounded" />
-                                            </div>
-                                        </div>
-                                        <div class="answer-area mb-4">
-                                            <div class="mb-1">
-                                                <span class="f-w--5 f-s--2 text-uppercase">Options:</span>
-                                            </div>
-                                            <form action="#" class="form-horizontal">
-                                                <div class="form-group pl-2 mb-1">
-                                                    <div class="custom-control custom-radio d-flex align-items-start">
-                                                        <input id="q-${i}-optA" class="custom-control-input" type="radio" name="q-1-opts" />
-                                                        <label for="q-1-optA" class="custom-control-label c-pointer">
-                                                            <span class="f-w--6 f-s--2">A.</span>
-                                                            <span>Clareo is debugging</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group pl-2 mb-1">
-                                                    <div class="custom-control custom-radio d-flex align-items-start">
-                                                        <input id="q-${i}-optB" class="custom-control-input" type="radio" name="q-1-opts" />
-                                                        <label for="q-1-optB" class="custom-control-label c-pointer">
-                                                            <span class="f-w--6 f-s--2">B.</span>
-                                                            <span>Clareo have been debugging</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group pl-2 mb-1">
-                                                    <div class="custom-control custom-radio d-flex align-items-start">
-                                                        <input id="q-${i}-optC" class="custom-control-input" type="radio" name="q-1-opts" />
-                                                        <label for="q-1-optC" class="custom-control-label c-pointer">
-                                                            <span class="f-w--6 f-s--2">C.</span>
-                                                            <span>Clareo is still debugging</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group pl-2 mb-1">
-                                                    <div class="custom-control custom-radio d-flex align-items-start">
-                                                        <input id="q-${i}-optD" class="custom-control-input" type="radio" name="q-1-opts" />
-                                                        <label for="q-1-optD" class="custom-control-label c-pointer">
-                                                            <span class="f-w--6 f-s--2">D.</span>
-                                                            <span>Clareo gave up debugging!</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                `
-                                tabs += `
-                                    <li class="page-item">
-                                        <a class="page-link text-success" id="tab-${1}" data-toggle="tab" href="#q-${1}" role="tab" aria-controls="q${1}" aria-selected="${i == 1 ? 'true' : 'false' }">${i}</a>
-                                    </li>
-                                `
-                            }
-                            document.querySelector('#qs_tab_content').innerHTML = questions
-                            document.querySelector('#qs_tabs').innerHTML = tabs
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="modal-fixed" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-            <div class="modal-dialog modal-md" role="document">
-                <div class="modal-content">
-                    <div class="modal-header py-2 bg-light">
-                        <h5 class="modal-title">End Exam?</h5>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure you want to end the exam? be sure to properly
-                        cross-check all questions to avoid stories that touches the heart!
-                    </div>
-                    <div class="modal-footer py-2">
-                        <button type="button" class="btn btn-success" data-dismiss="modal">
-                            Good point
-                        </button>
-                        <button type="button" class="btn btn-danger">
-                            Yep! Submit
-                        </button>
                     </div>
                 </div>
             </div>
@@ -162,10 +82,3 @@
 </body>
 
 </html>
-<script>
-document.querySelectorAll('.custom-radio') forEach((btn) => {
-    btn.onclick = (event) => {
-
-    }
-})
-</script>
