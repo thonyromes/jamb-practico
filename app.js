@@ -8,21 +8,24 @@ ipcMain.on('notification-clicked', () => {
 
 const createWindow = () => {
     win = new BrowserWindow({
-        // width: 1280,
-        // height: 720,
-        width: 800,
-        height: 600,
+        width: 1280,
+        height: 720,
         icon: 'icon.ico',
-        // frame:false,
         center: true,
+        closeable: false,
+        movable: false,
+        resizable: false,
+        minimizable: true,
         webPreferences: {
             nodeIntegration: true
         }
     })
 
+    win.maximize()
+
     win.loadFile('views/student/login.html')
 
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
 
     win.on('closed', () => {
         win = null
