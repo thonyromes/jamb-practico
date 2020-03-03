@@ -10,11 +10,23 @@ function updateWCTime(kickoff) {
 
     dd = days;
     hh = hours - days * 24;
+    hh = ("0" + hh).slice(-2)
     mm = mins - hours * 60;
     mm = ("0" + mm).slice(-2)
     ss = secs - mins * 60;
     ss = ("0" + ss).slice(-2)
 
-    document.getElementById("timer-display").innerHTML = `${mm}:${ss}`;
+    if (hh == '00' & mm == '00' & ss == '00') {
+        endExam()
+    }
+    document.getElementById("timer-display").innerHTML = `${hh}:${mm}:${ss}`;
 }
-setInterval(() => { updateWCTime(getSettings()['examEnd']) }, 1000)
+let interval = setInterval(() => { updateWCTime(parseInt(localStorage.getItem('examEnd'))) }, 1000)
+
+function endExam() {
+    clearInterval(interval)
+    localStorage.removeItem('subjects')
+    localStorage.removeItem('examEnd')
+    alert('Exam Ended')
+    location.assign('./index.html')
+}
