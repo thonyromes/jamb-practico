@@ -49,7 +49,7 @@ const resetSettings = () => {
 }
 
 const login = () => {
-	document.querySelector('#form').onsubmit = (e) =>{
+	document.querySelector('#form').onsubmit = (e) => {
 		e.preventDefault()
 		let email = document.querySelector('#userEmail').value
 		let password = document.querySelector('#userPass').value
@@ -61,8 +61,9 @@ const login = () => {
 				loggedIn: true
 			})
 			location.assign('./login.html')
-		}else{
-			alert('Login Failed')
+        }
+        else{
+			alert('Verify Login credentials')
 		}
 	}
 }

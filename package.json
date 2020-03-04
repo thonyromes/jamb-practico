@@ -1,18 +1,35 @@
 {
-  "name": "gitlaws",
+  "name": "jamb-practico",
   "version": "1.0.0",
-  "description": "A detailed repository of state and federal laws",
+  "description": "Jamb Cbt based mock exam",
   "main": "app.js",
   "scripts": {
     "start": "electron .",
     "postinstall": "electron-builder install-app-deps"
   },
   "keywords": [
-    "legal",
-    "tech",
-    "law"
+    "cbt",
+    "exam",
+    "jamb practico",
+    "jamb mock"
   ],
-  "author": "Claret Nnamocha <devclareo@gmail.com>",
+  "contributors": [
+    {
+      "name" : "Claret Nnamocha",
+      "email" : "devclareo@gmail.com",
+      "role" : "Back-end"
+    },
+    {
+      "name": "Eyibie Uche",
+      "email": "Eyibieuche@gmail.com",
+      "role": "Back-end, content creation"
+    },
+    {
+      "name": "Anthony Romanus",
+      "email": "thonyroams@gmail.com"
+    }
+  ],
+  
   "license": "MIT",
   "dependencies": {
     "alpha-orm": "^1.2.13",

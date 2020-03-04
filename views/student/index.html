@@ -109,10 +109,12 @@
                                         <div class="form-group col-12 col-sm-6">
                                             <label for="email">Email:</label>
                                             <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" aria-describedby="helpemail" />
-                                            <small id="helpemail" class="text-muted">Where should we reply you?</small>
+                                            <small id="helpemail" class="text-muted">Email address is optional</small>
                                         </div>
                                     </div>
-                                    <div class="row">
+
+                                    <!-- remember we talked about making it just one shuffled exam -->
+                                    <!-- <div class="row">
                                         <div class="form-group col-12 col-sm-6">
                                             <label for="subject">Year:</label>
                                             <select class="custom-select" name="subject" id="subject" aria-describedby="helpsubject">
@@ -126,7 +128,7 @@
                                                 <option>2019</option>
                                             </select>
                                             <small id="helpsubject" class="text-muted">Select year</small>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group col-12 col-sm-6">
                                             <label for="subject">Subject:</label>
                                             <select class="custom-select" name="subject" id="subject" aria-describedby="helpsubject">
@@ -138,14 +140,14 @@
                                             <small id="helpsubject" class="text-muted">Select your subject of interest</small>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label for="question_num">
                                             Number of questions:
                                             <span id="current_q_num">100</span>
                                         </label>
                                         <input id="question_num" class="custom-range" type="range" name="question_num" min="5" max="150" value="100" aria-describedby="helpquestion_num" />
                                         <small id="helpquestion_num" class="text-muted">Drag to Select number of questions</small>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group text-center mt-4">
                                         <button type="button" data-toggle="modal" data-target="#modal-fixed" class="btn btn-success btn-lg show-modal">
                                             Start Exam
@@ -162,35 +164,37 @@
         <div class="modal fade" id="modal-fixed" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header py-2 bg-light">
+                    <div class="modal-header py-4 bg-light">
                         <h5 class="modal-title text-center">
-                            Ready to rumble?
+                            Ready to commence ?
                         </h5>
                         <div class="pl-2">
                             <small>
-                                Please read the following instructions like your life depends
-                                on it!</small>
+                                Please carefully read the following !</small>
                         </div>
                     </div>
                     <div class="modal-body">
                         <p class="text-justify f-xs--4">
-                            We at Jamb Practico hereby holds no responsibility to any
-                            mental, social, physical or spiritual damage that may or may not
-                            arise as a result of the difficulty of our questions.
+                            Every subject has a time line, please ensure to finish up
+                             before the time elapses, else the subject being written 
+                             would be terminated and submitted
                         </p>
                         <p class="text-justify f-xs--4">
                             Our sole objective is the tempering of young minds to conquer
                             and dominate the world purely with their intellect and we
-                            believe Jamb Practico is step towards achieving this goal.
+                            believe Jamb Practico is one step towards achieving this goal.
                         </p>
                         <p class="text-justify f-xs--4">
-                            We sincerely urge you to answer thus in sickness and in health
-                            to please carry on at your own risk.
+                            The questions you see here are from jamb past questions 2015-present 
+                        </p>
+                        <p class="text-justify f-xs--4">
+                            We urge you to answer as many questions as possible and give it your best shot.
+                            This is a cbt based mock exam to get you acquainted with cbt bases tests and exams 
                         </p>
                     </div>
                     <div class="modal-footer py-2">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">
-                            Not sure!
+                            Cancel
                         </button>
                         <button id="start" type="button" class="btn btn-success" data-dismiss="modal">
                             OK! lets go
