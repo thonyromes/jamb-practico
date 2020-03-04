@@ -10,15 +10,23 @@ const createWindow = () => {
     win = new BrowserWindow({
         width: 1280,
         height: 720,
+<<<<<<< HEAD
         // width: 800,
         // height: 600,
+=======
+>>>>>>> c207156ddfcbaba1f045ea2885f4316535dada56
         icon: 'icon.ico',
-        // frame:false,
         center: true,
+        closeable: false,
+        movable: false,
+        resizable: false,
+        minimizable: true,
         webPreferences: {
             nodeIntegration: true
         }
     })
+
+    win.maximize()
 
     win.loadFile('views/student/login.html')
 

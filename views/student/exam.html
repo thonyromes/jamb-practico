@@ -3,6 +3,7 @@
 
 <head>
     <script src="../static/js/electron.setup.js"></script>
+    <script> examInit() </script>
     <meta http-equiv="Content-Type" content="text/hdl;charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,40 +21,57 @@
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal fade" id="modal-fixed" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header py-2 bg-light">
+                    <h5 class="modal-title">End Exam?</h5>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to end the exam? be sure to properly
+                    cross-check all questions to avoid stories that touches the heart!
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">
+                        Good point
+                    </button>
+                    <button type="button" class="btn btn-danger" id="end-btn">
+                        Yep! Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
     <div class="wrapper wrapper-bg bg-fullscreen d-flex justify-centent-center align-items-center">
-        <div class="container-fluid py-5 py-md-3">
-            <div class="row pt-5 pt-md-3">
-                <div class="col-12 mx-auto pt-5 py-md-3">
-                    <div class="d-box rounded">
+        <div class="container-fluid py-5 py-md-3 py-lg-1">
+            <div class="row pt-5 pt-md-3 py-lg-1">
+                <div class="col-12 mx-auto pt-5 py-md-3 py-lg-1">
+                    <div class="d-box rounded py-1">
                         <div class="d-box-header">
-                            <div class="d-flex flex-wrap flex-md-nowrap align-items-center justify-content-center justify-content-md-between border-bottom pb-2">
+                            <div id="timer" class="text-capitalize text-center bg-success text-white">
+                                <span class="f-w--6 f-s--2" id="timer-display">00:00:00</span>
+                                <script src="../static/js/timer.js"></script>
+                                <div class="line-bottom line-thick col-1 mx-auto"></div>
+                            </div>
+                        </div>
+                        <ul class="nav nav-tabs row justify-content-start align-items-center" id="subsTab" role="tablist">
+                            <!-- Subject TabLinks Goes here -->
+                        </ul>
+                        <div class="d-box-body">
+                            <div class="tab-content" id="lawsTabContent">
+                                <!-- Subject Tabs Goes here -->
+                            </div>
+                            <script src="../static/js/generate.page.js"></script>
+                            <div class="mt-2">
                                 <button data-toggle="modal" data-target="#modal-fixed" class="btn btn-sm btn-danger d-flex align-items-center show-modal">
                                     <i class="icon ion-ios-close-outline icon-w icon-x"></i>
                                     <span class="f-w--6">End Exam</span>
                                 </button>
-                                <h4 class="text-center m-0 mt-3 mb-1 my-md-0 d-black-50 col-12 col-md-auto f-s--2">
-                                    Mathematics (100 Questions)
-                                </h4>
-                                <div id="timer" class="text-capitalize text-center">
-                                    <span class="f-w--6 f-s--4" id="timer-display">59:00</span>
-                                    <script src="../static/js/timer.js"></script>
-                                    <span class="f-w--4">min(s) remaining</span>
-                                    <div class="line-bottom line-thick col-1 mx-auto"></div>
-                                </div>
                             </div>
                         </div>
-                        <div class="d-box-body">
-                            <div class="tab-content" id="qs_tab_content">
-                                <!-- Questions Go Here -->
-                            </div>
-                            <div class="question-num-area">
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination nav nav-tabs justify-content-center" id="qs_tabs" role="tablist">
-                                        <!-- Navs Go Here -->
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
+<<<<<<< HEAD
                         <script>
                             let questions = ''
                             let tabs = ''
@@ -150,6 +168,8 @@
                         <button type="button" class="btn btn-danger">
                             Yep! Submit
                         </button>
+=======
+>>>>>>> c207156ddfcbaba1f045ea2885f4316535dada56
                     </div>
                 </div>
             </div>
@@ -161,10 +181,3 @@
 </body>
 
 </html>
-<script>
-document.querySelectorAll('.custom-radio') forEach((btn) => {
-    btn.onclick = (event) => {
-
-    }
-})
-</script>

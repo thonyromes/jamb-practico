@@ -22,9 +22,18 @@ if (typeof module === 'object') {
 
 const build = require('../../src/build')
 
-
+const reset = () => {
+    localStorage.clear()
+}
 const loginInit = () => {
     if (build.loggedIn()) {
+        location.assign('./index.html')
+    }
+}
+
+
+const examInit = () => {
+    if ((!localStorage.getItem('examEnd')) && (!localStorage.getItem('subjects'))) {
         location.assign('./index.html')
     }
 }
@@ -36,19 +45,21 @@ const init = () => {
 }
 
 const getSettings = () => {
-	return build.getUserSettings()
+    return build.getUserSettings()
 }
 
 
 const setSettings = (config) => {
-	return build.setUserSettings(config)
+    return build.setUserSettings(config)
 }
 
 const resetSettings = () => {
-	return build.resetUserSettings()
+    return build.resetUserSettings()
 }
 
+
 const login = () => {
+<<<<<<< HEAD
 	document.querySelector('#form').onsubmit = (e) => {
 		e.preventDefault()
 		let email = document.querySelector('#userEmail').value
@@ -66,4 +77,23 @@ const login = () => {
 			alert('Verify Login credentials')
 		}
 	}
+=======
+    document.querySelector('#form').onsubmit = (e) => {
+        e.preventDefault()
+        let email = document.querySelector('#userEmail').value
+        let password = document.querySelector('#userPass').value
+
+        resetSettings()
+        if (email == 'admin@jambpractico.com' && password == 'practicoadmin') {
+            setSettings({
+                name: 'Practico Admin',
+                loggedIn: true,
+                email: 'admin@jambpractico.com  '
+            })
+            location.assign('./login.html')
+        } else {
+            alert('Login Failed')
+        }
+    }
+>>>>>>> c207156ddfcbaba1f045ea2885f4316535dada56
 }

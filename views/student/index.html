@@ -18,6 +18,7 @@
     <link rel="shortcut icon" href="../static/img/favicon.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="../static/img/favicon.png" />
     <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/bootstrap-select.css" />
     <link href="../static/font/ionicons/css/ionicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../static/css/main.min.css" />
 </head>
@@ -77,12 +78,13 @@
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
+                            <!-- 
                             <li class="nav-item">
                                 <a href="logout.html" class="nav-link d-flex align-items-center justify-content-start">
                                     <span class="badge mr-2 d-sidebar-icon"><i class="icon ion-ios-lock-outline"></i></span>
                                     <span class="align-text-bottom">Logout</span>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </nav>
                 </aside>
@@ -103,18 +105,32 @@
                                     <div class="row">
                                         <div class="form-group col-12 col-sm-6">
                                             <label for="name">Name:</label>
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Your name" aria-describedby="helpname" />
+                                            <input type="text" name="name" id="name" class="form-control" placeholder="Your name" aria-describedby="helpname" required />
                                             <small id="helpname" class="text-muted">What should we call you?</small>
                                         </div>
                                         <div class="form-group col-12 col-sm-6">
                                             <label for="email">Email:</label>
+<<<<<<< HEAD
                                             <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" aria-describedby="helpemail" />
                                             <small id="helpemail" class="text-muted">Email address is optional</small>
+=======
+                                            <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" aria-describedby="helpemail" required />
+                                            <small id="helpemail" class="text-muted">Where should we reply you?</small>
+>>>>>>> c207156ddfcbaba1f045ea2885f4316535dada56
                                         </div>
+                                        <script>
+                                            document.querySelector('#name').value = getSettings()['name'] ? getSettings()['name'] : ''
+                                            document.querySelector('#email').value = getSettings()['email'] ? getSettings()['email'] : ''
+                                        </script>
                                     </div>
+<<<<<<< HEAD
 
                                     <!-- remember we talked about making it just one shuffled exam -->
                                     <!-- <div class="row">
+=======
+                                    <div class="row">
+                                        <!-- 
+>>>>>>> c207156ddfcbaba1f045ea2885f4316535dada56
                                         <div class="form-group col-12 col-sm-6">
                                             <label for="subject">Year:</label>
                                             <select class="custom-select" name="subject" id="subject" aria-describedby="helpsubject">
@@ -131,16 +147,21 @@
                                         </div> -->
                                         <div class="form-group col-12 col-sm-6">
                                             <label for="subject">Subject:</label>
-                                            <select class="custom-select" name="subject" id="subject" aria-describedby="helpsubject">
-                                                <option selected disabled>Select one:</option>
-                                                <option value="math">Math</option>
-                                                <option value="physics">physics</option>
-                                                <option value="chemistry">chemistry</option>
-                                            </select>
+                                            <select class="selectpicker" multiple required>
+                                                <option>English</option>
+                                                <option>Mathematics</option>
+                                                <option>Economics</option>
+                                                <option>Accounting</option>
+                                            </select><br>
                                             <small id="helpsubject" class="text-muted">Select your subject of interest</small>
                                         </div>
                                     </div>
+<<<<<<< HEAD
                                     <!-- <div class="form-group">
+=======
+                                    <!-- 
+                                    <div class="form-group">
+>>>>>>> c207156ddfcbaba1f045ea2885f4316535dada56
                                         <label for="question_num">
                                             Number of questions:
                                             <span id="current_q_num">100</span>
@@ -206,17 +227,43 @@
     </div>
     <script src="../static/js/jquery-3.4.1.min.js"></script>
     <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/bootstrap-select.min.js"></script>
     <script src="../static/js/main.min.js"></script>
 </body>
 
 </html>
 <script>
+$('select').selectpicker()
+
 document.querySelector('#start').onclick = () => {
+    let params = {
+        Name: document.querySelector('#name').value,
+        Email: document.querySelector('#email').value,
+        Subject: []
+    }
+    for (i = 0; i < $(`select`).find("option:selected").length; i++) {
+        // console.log($(`select`).find("option:selected")[i])
+        let opt = $(`select`).find("option:selected")[i]
+        console.log(opt.value, $(`select`).find("option:selected").length)
+        params.Subject.push(opt.value)
+    }
+    for (param in params) {
+        if (params[param] == '') {
+            alert(`${param} is required`)
+            return
+        }
+    }
+    if ($('select').val().length > 3) {
+            alert('Maximum number of subjects to be selected is 4')
+            return
+        }
     let now = new Date()
-    let examEnd = now.setMinutes(now.getMinutes() + 60)
-    settings = getSettings()
-    settings['examEnd'] = examEnd
-    setSettings(settings)
+    let time = 20 * params.Subject.length
+    console.log(time)
+    let examEnd = now.setMinutes(now.getMinutes() + time)
+    console.log(examEnd)
+    localStorage.setItem('examEnd', examEnd.toString())
+    localStorage.setItem('subjects', JSON.stringify(params.Subject))
     location.assign('./exam.html')
 }
 </script>
