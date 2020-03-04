@@ -1,0 +1,143 @@
+<!DOCTYPE hdl>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/hdl;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Romes" />
+    <meta name="keywords" content="Jamb Practico" />
+    <meta name="description" content="Jamb Practico" />
+    <title>
+      Jamb Practico
+    </title>
+    <link
+      rel="shortcut icon"
+      href="../static/img/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="../static/img/favicon.png" />
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link
+      href="../static/font/ionicons/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/css/main.min.css" />
+  </head>
+
+  <body>
+    <div
+      class="wrapper wrapper-bg bg-fullscreen d-flex justify-centent-center align-items-center"
+    >
+      <div class="container-fluid py-5 py-md-3 py-lg-1">
+        <div class="row pt-5 pt-md-3 py-lg-1">
+          <div class="col-12 mx-auto pt-5 py-md-3 py-lg-1">
+            <div class="d-box rounded py-1">
+              <div class="d-box-header border-bottom mb-3 py-2">
+                <h4 class="m-0 text-center text-success">Exam completed</h4>
+              </div>
+
+              <!-- End Subject tab navigation -->
+              <div class="d-box-body">
+                <div class="table-responsive">
+                  <table
+                    class="table table-striped table-inverse col-12 col-md-10 col-lg-8 col-xl-6 mx-auto shadow-sm border"
+                  >
+                    <caption class="table-caption">
+                      Exam Result
+                    </caption>
+                    <thead class="thead-inverse">
+                      <tr class="text-nowrap">
+                        <th>Subject</th>
+                        <th>Score</th>
+                        <th>(%)</th>
+                        <th>Remark</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope="row" class="f-w--6">Mathmatics</td>
+                        <td>82 of 100</td>
+                        <td>82%</td>
+                        <td>Excellent</td>
+                      </tr>
+                      <tr>
+                        <td scope="row" class="f-w--6">English</td>
+                        <td>75 of 100</td>
+                        <td>75%</td>
+                        <td>Very good</td>
+                      </tr>
+                      <tr>
+                        <td scope="row" class="f-w--6">Physics</td>
+                        <td>75 of 100</td>
+                        <td>75%</td>
+                        <td>Very good</td>
+                      </tr>
+                      <tr>
+                        <td scope="row" class="f-w--6">Chemistry</td>
+                        <td>75 of 100</td>
+                        <td>75%</td>
+                        <td>Very good</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td colspan="4" class="text-right">
+                          <a href="./answers.html" class="text-primary link"
+                            >View answers</a
+                          >
+                        </td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+                <div class="text-right"></div>
+                <div class="text-center my-3">
+                  <a href="./index.html" class="btn btn-lg btn-success"
+                    >Take another Exam</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="modal-fixed"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="modelTitleId"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-md" role="document">
+          <div class="modal-content">
+            <div class="modal-header py-2 bg-light">
+              <h5 class="modal-title">End Exam?</h5>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to end the exam? be sure to properly
+              cross-check all questions to avoid stories that touches the heart!
+            </div>
+            <div class="modal-footer py-2">
+              <button
+                type="button"
+                class="btn btn-success"
+                data-dismiss="modal"
+              >
+                Good point
+              </button>
+              <button type="button" class="btn btn-danger">
+                Yep! Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/main.min.js"></script>
+  </body>
+</html>
