@@ -1,0 +1,504 @@
+<!DOCTYPE hdl>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/hdl;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Romes" />
+    <meta name="keywords" content="Jamb Practico" />
+    <meta name="description" content="Jamb Practico" />
+    <title>
+      Jamb Practico
+    </title>
+    <link
+      rel="shortcut icon"
+      href="../static/img/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="../static/img/favicon.png" />
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link
+      href="../static/font/ionicons/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/css/main.min.css" />
+  </head>
+
+  <body>
+    <div
+      class="wrapper wrapper-bg bg-fullscreen d-flex justify-centent-center align-items-center"
+    >
+      <div class="container-fluid py-5 py-md-3 py-lg-1">
+        <div class="row pt-5 pt-md-3 py-lg-1">
+          <div class="col-12 mx-auto pt-5 py-md-3 py-lg-1">
+            <div class="d-box rounded py-1">
+              <div class="d-box-header border-bottom mb-3 py-2">
+                <h4 class="m-0 text-center text-success">
+                  Answers to just finished exam
+                </h4>
+              </div>
+
+              <!-- Subject tab navigation -->
+              <ul
+                class="nav nav-tabs row justify-content-start align-items-center"
+                id="subsTab"
+                role="tablist"
+              >
+                <li class="nav-item col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                  <a
+                    class="p-0 nav-link active"
+                    id="sub01-tab"
+                    data-toggle="tab"
+                    href="#sub01"
+                    role="tab"
+                    aria-controls="sub01"
+                    aria-selected="true"
+                  >
+                    <div
+                      class="text-center p-1 f-w--6"
+                      title="Click to switch subject"
+                    >
+                      Mathematics
+                    </div>
+                  </a>
+                </li>
+                <li class="nav-item col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                  <a
+                    class="p-0 nav-link"
+                    id="sub02-tab"
+                    data-toggle="tab"
+                    href="#sub02"
+                    role="tab"
+                    aria-controls="sub02"
+                    aria-selected="true"
+                  >
+                    <div
+                      class="text-center p-1 f-w--6"
+                      title="Click to switch subject"
+                    >
+                      English
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <!-- End Subject tab navigation -->
+              <div class="d-box-body">
+                <!-- Subjects tab content -->
+                <div class="tab-content" id="lawsTabContent">
+                  <div
+                    class="tab-pane fade show active"
+                    id="sub01"
+                    role="tabpanel"
+                    aria-labelledby="sub01-tab"
+                  >
+                    <!-- Question tab content -->
+                    <div class="tab-content" id="qs_tab_content">
+                      <div
+                        class="tab-pane fade show active"
+                        id="sub01-q001"
+                        role="tabpanel"
+                        aria-labelledby="sub01-q001-tab"
+                      >
+                        <div class="question-area mb-4">
+                          <div
+                            class="question__theory mb-3 d-flex justify-content-start align-items-center flex-wrap"
+                          >
+                            <div class="text-nowrap">
+                              <span class="f-w--6 f-s--3">Q</span>
+                              <span class="f-w--5 f-xs--6">1.</span>
+                            </div>
+                            <div class="pl-2">
+                              What happens when an unstopable force meets an
+                              immovable object?
+                            </div>
+                          </div>
+                          <div
+                            class="question__image col-11 col-sm-6 col-md-5 col-lg-3 pl-3 pl-sm-5"
+                          >
+                            <img
+                              src="../static/img/books-1.jpeg"
+                              alt="question-image"
+                              class="img-fluid rounded"
+                            />
+                          </div>
+                        </div>
+                        <div class="answer-area mb-4">
+                          <div class="mb-1">
+                            <span class="f-w--5 f-s--2 text-uppercase"
+                              >Answer:</span
+                            >
+                          </div>
+                          <form action="#" class="form-horizontal">
+                            <div class="form-group pl-2 mb-1">
+                              <div
+                                class="custom-control custom-radio d-flex align-items-start"
+                              >
+                                <input
+                                  id="sub01-q001-optA"
+                                  class="custom-control-input"
+                                  type="radio"
+                                  name="sub01-q001-opts"
+                                  checked
+                                />
+                                <label
+                                  for="sub01-q001-optA"
+                                  class="custom-control-label c-pointer"
+                                >
+                                  <span class="f-w--6 f-s--2">A.</span>
+                                  <span>Clareo is debugging</span>
+                                </label>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+
+                      <div
+                        class="tab-pane fade"
+                        id="sub01-q002"
+                        role="tabpanel"
+                        aria-labelledby="sub01-q002-tab"
+                      >
+                        <div class="question-area mb-4">
+                          <div
+                            class="question__theory mb-3 d-flex justify-content-start align-items-center flex-wrap"
+                          >
+                            <div class="text-nowrap">
+                              <span class="f-w--6 f-s--3">Q</span>
+                              <span class="f-w--5 f-xs--6">2.</span>
+                            </div>
+                            <div class="pl-2">
+                              What happens when an unstopable force meets an
+                              immovable object!
+                            </div>
+                          </div>
+                        </div>
+                        <div class="answer-area mb-4">
+                          <div class="mb-1">
+                            <span class="f-w--5 f-s--2 text-uppercase"
+                              >Answer:</span
+                            >
+                          </div>
+                          <form action="#" class="form-horizontal">
+                            <div class="form-group pl-2 mb-1">
+                              <div
+                                class="custom-control custom-radio d-flex align-items-start"
+                              >
+                                <input
+                                  id="sub01-q002-optB"
+                                  class="custom-control-input"
+                                  type="radio"
+                                  name="sub01-q002-opts"
+                                  checked
+                                />
+                                <label
+                                  for="sub01-q002-optB"
+                                  class="custom-control-label c-pointer"
+                                >
+                                  <span class="f-w--6 f-s--2">B.</span>
+                                  <span>Clareo have been debugging</span>
+                                </label>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Question tab content -->
+
+                    <!-- Question tab navigation -->
+                    <div class="question-num-area">
+                      <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center flex-wrap">
+                          <li class="page-item disabled">
+                            <a
+                              class="page-link text-success"
+                              href="#"
+                              aria-label="Previous"
+                            >
+                              <span aria-hidden="true">&laquo;</span>
+                              <span>Previous</span>
+                            </a>
+                          </li>
+                          <li class="page-item">
+                            <a
+                              class="page-link text-success"
+                              href="#"
+                              aria-label="Next"
+                            >
+                              <span aria-hidden="true">&raquo;</span>
+                              <span>Next</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                      <nav aria-label="Page navigation">
+                        <ul
+                          class="pagination nav nav-tabs justify-content-center"
+                          id="qs_tabs"
+                          role="tablist"
+                        >
+                          <li class="page-item">
+                            <a
+                              class="page-link text-success answered"
+                              id="sub01-q001-tab"
+                              data-toggle="tab"
+                              href="#sub01-q001"
+                              role="tab"
+                              aria-controls="sub01-q001"
+                              aria-selected="true"
+                              >1</a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a
+                              class="page-link text-success skipped"
+                              id="sub01-q002-tab"
+                              data-toggle="tab"
+                              href="#sub01-q002"
+                              role="tab"
+                              aria-controls="sub01-q002"
+                              aria-selected="false"
+                              >2</a
+                            >
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                    <!-- End Question tab navigation -->
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="sub02"
+                    role="tabpanel"
+                    aria-labelledby="sub02-tab"
+                  >
+                    <!-- Question tab content -->
+                    <div class="tab-content" id="qs_tab_content">
+                      <div
+                        class="tab-pane fade show active"
+                        id="sub02-q001"
+                        role="tabpanel"
+                        aria-labelledby="sub02-q001-tab"
+                      >
+                        <div class="question-area mb-4">
+                          <div
+                            class="question__theory mb-3 d-flex justify-content-start align-items-center flex-wrap"
+                          >
+                            <div class="text-nowrap">
+                              <span class="f-w--6 f-s--3">Q</span>
+                              <span class="f-w--5 f-xs--6">1.</span>
+                            </div>
+                            <div class="pl-2">
+                              What happens when an unstopable force meets an
+                              immovable object?
+                            </div>
+                          </div>
+                          <div
+                            class="question__image col-11 col-sm-6 col-md-5 col-lg-3 pl-3 pl-sm-5"
+                          >
+                            <img
+                              src="../static/img/books-1.jpeg"
+                              alt="question-image"
+                              class="img-fluid rounded"
+                            />
+                          </div>
+                        </div>
+                        <div class="answer-area mb-4">
+                          <div class="mb-1">
+                            <span class="f-w--5 f-s--2 text-uppercase"
+                              >Answer:</span
+                            >
+                          </div>
+                          <form action="#" class="form-horizontal">
+                            <div class="form-group pl-2 mb-1">
+                              <div
+                                class="custom-control custom-radio d-flex align-items-start"
+                              >
+                                <input
+                                  id="sub02-q001-optC"
+                                  class="custom-control-input"
+                                  type="radio"
+                                  name="sub02-q001-opts"
+                                  checked
+                                />
+                                <label
+                                  for="sub02-q001-optC"
+                                  class="custom-control-label c-pointer"
+                                >
+                                  <span class="f-w--6 f-s--2">C.</span>
+                                  <span>Clareo is still debugging</span>
+                                </label>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+
+                      <div
+                        class="tab-pane fade"
+                        id="sub02-q002"
+                        role="tabpanel"
+                        aria-labelledby="sub02-q002-tab"
+                      >
+                        <div class="question-area mb-4">
+                          <div
+                            class="question__theory mb-3 d-flex justify-content-start align-items-center flex-wrap"
+                          >
+                            <div class="text-nowrap">
+                              <span class="f-w--6 f-s--3">Q</span>
+                              <span class="f-w--5 f-xs--6">2.</span>
+                            </div>
+                            <div class="pl-2">
+                              What happens when an unstopable force meets an
+                              immovable object!
+                            </div>
+                          </div>
+                        </div>
+                        <div class="answer-area mb-4">
+                          <div class="mb-1">
+                            <span class="f-w--5 f-s--2 text-uppercase"
+                              >Answer:</span
+                            >
+                          </div>
+                          <form action="#" class="form-horizontal">
+                            <div class="form-group pl-2 mb-1">
+                              <div
+                                class="custom-control custom-radio d-flex align-items-start"
+                              >
+                                <input
+                                  id="sub02-q002-optD"
+                                  class="custom-control-input"
+                                  type="radio"
+                                  name="sub02-q002-opts"
+                                  checked
+                                />
+                                <label
+                                  for="sub02-q002-optD"
+                                  class="custom-control-label c-pointer"
+                                >
+                                  <span class="f-w--6 f-s--2">D.</span>
+                                  <span>Clareo gave up debugging!</span>
+                                </label>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Question tab content -->
+
+                    <!-- Question tab navigation -->
+                    <div class="question-num-area">
+                      <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center flex-wrap">
+                          <li class="page-item disabled">
+                            <a
+                              class="page-link text-success"
+                              href="#"
+                              aria-label="Previous"
+                            >
+                              <span aria-hidden="true">&laquo;</span>
+                              <span>Previous</span>
+                            </a>
+                          </li>
+                          <li class="page-item">
+                            <a
+                              class="page-link text-success"
+                              href="#"
+                              aria-label="Next"
+                            >
+                              <span aria-hidden="true">&raquo;</span>
+                              <span>Next</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                      <nav aria-label="Page navigation">
+                        <ul
+                          class="pagination nav nav-tabs justify-content-center"
+                          id="qs_tabs"
+                          role="tablist"
+                        >
+                          <li class="page-item">
+                            <a
+                              class="page-link text-success"
+                              id="sub02-q001-tab"
+                              data-toggle="tab"
+                              href="#sub02-q001"
+                              role="tab"
+                              aria-controls="sub02-q001"
+                              aria-selected="true"
+                              >1</a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a
+                              class="page-link text-success"
+                              id="sub02-q002-tab"
+                              data-toggle="tab"
+                              href="#sub02-q002"
+                              role="tab"
+                              aria-controls="sub02-q002"
+                              aria-selected="false"
+                              >2</a
+                            >
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                    <!-- End Question tab navigation -->
+                  </div>
+                </div>
+                <!-- End Subjects tab content -->
+
+                <div class="mt-2">
+                  <a href="./index.html" class="btn btn-success">
+                    Take another Exam
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="modal-fixed"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="modelTitleId"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-md" role="document">
+          <div class="modal-content">
+            <div class="modal-header py-2 bg-light">
+              <h5 class="modal-title">End Exam?</h5>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to end the exam? be sure to properly
+              cross-check all questions to avoid stories that touches the heart!
+            </div>
+            <div class="modal-footer py-2">
+              <button
+                type="button"
+                class="btn btn-success"
+                data-dismiss="modal"
+              >
+                Good point
+              </button>
+              <button type="button" class="btn btn-danger">
+                Yep! Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/main.min.js"></script>
+  </body>
+</html>
